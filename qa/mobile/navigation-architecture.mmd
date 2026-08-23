@@ -1,0 +1,18 @@
+flowchart LR
+  Login --> Shell
+  subgraph Shell[Authenticated mobile shell]
+    AppBar[Contextual app bar\nmenu + back]
+    Active[ONE active screen\nmain > screen-container]
+    Bottom[Phone bottom navigation]
+    Drawer[Role-aware menu drawer]
+    AppBar --> Active
+    Bottom --> Active
+    Drawer --> Active
+  end
+  Active --> Dashboard
+  Active --> Billing
+  Active --> Inventory
+  Active --> Customers
+  Active --> Admin[Admin-only modules]
+  Active --> Back[Android/browser back\nhistory stack]
+  Back --> Active

@@ -1,0 +1,416 @@
+[
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 360,
+      "height": 844
+    },
+    "documentWidth": 360,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 5,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 352,
+      "height": 8651.625
+    },
+    "routeName": "dashboard",
+    "width": 360,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-360.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 375,
+      "height": 844
+    },
+    "documentWidth": 375,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 5,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 367,
+      "height": 8563.625
+    },
+    "routeName": "dashboard",
+    "width": 375,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-375.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "documentWidth": 390,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 5,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 382,
+      "height": 8733.625
+    },
+    "routeName": "dashboard",
+    "width": 390,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-390.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 412,
+      "height": 844
+    },
+    "documentWidth": 412,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 5,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 404,
+      "height": 8733.625
+    },
+    "routeName": "dashboard",
+    "width": 412,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-412.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 430,
+      "height": 844
+    },
+    "documentWidth": 430,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 5,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 422,
+      "height": 8691.65625
+    },
+    "routeName": "dashboard",
+    "width": 430,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-430.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "documentWidth": 768,
+    "documentHeight": 1024,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 5,
+    "bottomNavVisible": false,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 760,
+      "height": 4391.78125
+    },
+    "routeName": "dashboard",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-768.png"
+  },
+  {
+    "route": "?screen=billing",
+    "viewport": {
+      "width": 360,
+      "height": 844
+    },
+    "documentWidth": 360,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 352,
+      "height": 3260.375
+    },
+    "routeName": "billing",
+    "width": 360,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-360.png"
+  },
+  {
+    "route": "?screen=billing",
+    "viewport": {
+      "width": 375,
+      "height": 844
+    },
+    "documentWidth": 375,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 367,
+      "height": 3226.59375
+    },
+    "routeName": "billing",
+    "width": 375,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-375.png"
+  },
+  {
+    "route": "?screen=billing",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "documentWidth": 390,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 382,
+      "height": 2310.375
+    },
+    "routeName": "billing",
+    "width": 390,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-390.png"
+  },
+  {
+    "route": "?screen=billing",
+    "viewport": {
+      "width": 412,
+      "height": 844
+    },
+    "documentWidth": 412,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 404,
+      "height": 2294.375
+    },
+    "routeName": "billing",
+    "width": 412,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-412.png"
+  },
+  {
+    "route": "?screen=billing",
+    "viewport": {
+      "width": 430,
+      "height": 844
+    },
+    "documentWidth": 430,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 422,
+      "height": 2294.375
+    },
+    "routeName": "billing",
+    "width": 430,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-430.png"
+  },
+  {
+    "route": "?screen=billing",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "documentWidth": 768,
+    "documentHeight": 1024,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": false,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 760,
+      "height": 1993.90625
+    },
+    "routeName": "billing",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-768.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 360,
+      "height": 844
+    },
+    "documentWidth": 360,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 352,
+      "height": 8651.625
+    },
+    "routeName": "inventory",
+    "width": 360,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-360.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 375,
+      "height": 844
+    },
+    "documentWidth": 375,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 367,
+      "height": 8563.625
+    },
+    "routeName": "inventory",
+    "width": 375,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-375.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "documentWidth": 390,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 382,
+      "height": 8733.625
+    },
+    "routeName": "inventory",
+    "width": 390,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-390.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 412,
+      "height": 844
+    },
+    "documentWidth": 412,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 404,
+      "height": 8733.625
+    },
+    "routeName": "inventory",
+    "width": 412,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-412.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 430,
+      "height": 844
+    },
+    "documentWidth": 430,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 422,
+      "height": 8691.65625
+    },
+    "routeName": "inventory",
+    "width": 430,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-430.png"
+  },
+  {
+    "route": "?screen=products",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "documentWidth": 768,
+    "documentHeight": 1024,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": false,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 760,
+      "height": 4391.78125
+    },
+    "routeName": "inventory",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-768.png"
+  }
+]

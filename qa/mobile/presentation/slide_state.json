@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "title": "Kisan Dost Agro Manager",
+    "created": 1787513465.695,
+    "last_updated": 1787513812.453,
+    "total_slides": 7
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "app_like",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "shell_layers",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "back_stack",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "pos_touch",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "qa_results",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "delivery",
+      "state": "edited",
+      "pageNum": 7
+    }
+  ],
+  "outline": [
+    {
+      "id": "cover",
+      "title": "Kisan Dost Agro Manager",
+      "summary": "Cover slide introducing the mobile-first navigation and responsive-layout improvement for the existing pesticide shop management application."
+    },
+    {
+      "id": "app_like",
+      "title": "The app now behaves like an app",
+      "summary": "Explain the original narrow-screen stacking problem and the one-active-screen correction."
+    },
+    {
+      "id": "shell_layers",
+      "title": "One shell, three navigation layers",
+      "summary": "Show the contextual app bar, active screen container, and mobile navigation model while emphasizing preserved role permissions.",
+      "image_plan": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/navigation-architecture.png - Diagram illustrating the authenticated mobile shell and navigation layers for Slide 2"
+    },
+    {
+      "id": "back_stack",
+      "title": "Android back is predictable",
+      "summary": "Show the forward and reverse navigation flows and explain the browser-history-backed implementation."
+    },
+    {
+      "id": "pos_touch",
+      "title": "POS is stacked for touch",
+      "summary": "Summarize the mobile billing layout: search, category chips, product cards, cart, customer/payment controls, and safe-area clearance.",
+      "image_plan": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-360.png - Mobile app UI showing stacked touch-friendly design matching the POS description for Slide 4"
+    },
+    {
+      "id": "qa_results",
+      "title": "Narrow screens pass the core layout checks",
+      "summary": "Present the authenticated device-metrics emulation coverage and results across phone and tablet widths."
+    },
+    {
+      "id": "delivery",
+      "title": "Performance and delivery are ready",
+      "summary": "Present the measured session timing, resource footprint, layout-shift result, build/lint status, and latest GitHub commit."
+    }
+  ]
+}

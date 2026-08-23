@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>POS is stacked for touch</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #ffffff; 
+      color: #2D3732; 
+      font-family: Arial, Helvetica, sans-serif; 
+      display: grid; 
+      grid-template-columns: 400px 1fr; 
+    }
+    .visual { 
+      padding-top: 40px; 
+      padding-left: 60px; 
+      padding-right: 40px; 
+    }
+    .copy { 
+      border-left: 8px solid #4CAF50; 
+      padding-top: 68px; 
+      padding-left: 58px; 
+      padding-right: 58px; 
+    }
+    .eyebrow { 
+      color: #4CAF50; 
+      text-transform: uppercase; 
+      letter-spacing: 2.4px; 
+      font-size: 14px; 
+      font-weight: 700; 
+      margin-bottom: 18px; 
+    }
+    .marker { 
+      display: inline-block; 
+      width: 11px; 
+      height: 11px; 
+      background: #4CAF50; 
+      margin-right: 10px; 
+    }
+    h1 { 
+      margin: 0 0 24px; 
+      color: #1A3621; 
+      font-family: Georgia, 'Times New Roman', serif; 
+      font-size: 45px; 
+      line-height: 1.04; 
+      font-weight: 900; 
+      letter-spacing: -0.6px; 
+    }
+    .intro { 
+      font-size: 21px; 
+      line-height: 1.42; 
+      color: #526057; 
+      margin-bottom: 40px; 
+      max-width: 700px;
+    }
+    .features { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 40px 30px; 
+    }
+    .feature { 
+      border-top: 2px solid #D5DED7; 
+      padding-top: 14px; 
+    }
+    .feature h2 { 
+      margin: 0 0 8px; 
+      color: #1A3621; 
+      font-family: Georgia, 'Times New Roman', serif; 
+      font-size: 22px; 
+      font-weight: 900; 
+    }
+    .feature p { 
+      margin: 0; 
+      font-size: 16px; 
+      line-height: 1.4; 
+    }
+    .screenshot { 
+      display: block; 
+      width: 273px; 
+      height: 640px; 
+      object-fit: contain; 
+      border: 1px solid #D5DED7; 
+      background: #090d16;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <section class="visual">
+      <img class="screenshot" src="/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/billing-360.png" alt="Mobile POS UI" />
+    </section>
+    <section class="copy">
+      <div class="eyebrow"><span class="marker"></span> Mobile Billing</div>
+      <h1>POS is stacked for touch</h1>
+      <p class="intro">The billing layout is optimized for narrow screens, ensuring critical checkout controls remain accessible and separated from product selection.</p>
+      
+      <div class="features">
+        <div class="feature">
+          <h2>Search &amp; Filters</h2>
+          <p>Product search and category chips remain easy to reach at phone widths, avoiding horizontal overflow.</p>
+        </div>
+        <div class="feature">
+          <h2>Vertical Stacking</h2>
+          <p>Product cards, cart, customer selection, payment, and checkout stack vertically for a natural scroll flow.</p>
+        </div>
+        <div class="feature">
+          <h2>Visual Separation</h2>
+          <p>The cart stays visually separated from product selection to prevent errors during fast-paced retail checkout.</p>
+        </div>
+        <div class="feature">
+          <h2>Safe-Area Clearance</h2>
+          <p>Bottom-navigation spacing prevents checkout controls from being covered by system UI or app bars.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

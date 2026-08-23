@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>One shell, three navigation layers</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    .slide-container { width: 1280px; min-height: 720px; background: #ffffff; color: #2D3732; font-family: Arial, Helvetica, sans-serif; display: grid; grid-template-columns: 0.92fr 1.48fr; }
+    .copy { padding-top: 58px; padding-left: 58px; padding-right: 36px; }
+    .visual { border-left: 8px solid #4CAF50; padding-top: 30px; padding-left: 30px; padding-right: 36px; }
+    .eyebrow { color: #4CAF50; text-transform: uppercase; letter-spacing: 2.4px; font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+    .marker { display: inline-block; width: 11px; height: 11px; background: #4CAF50; margin-right: 10px; }
+    h1 { margin: 0 0 24px; color: #1A3621; font-family: Georgia, 'Times New Roman', serif; font-size: 43px; line-height: 1.04; font-weight: 900; letter-spacing: -0.6px; }
+    .intro { font-size: 18px; line-height: 1.42; color: #526057; margin-bottom: 18px; }
+    .layer { border-top: 2px solid #D5DED7; padding-top: 8px; margin-top: 10px; }
+    .layer h2 { margin: 0 0 5px; color: #1A3621; font-family: Georgia, 'Times New Roman', serif; font-size: 21px; font-weight: 900; }
+    .layer p { margin: 0; font-size: 15px; line-height: 1.35; }
+    .diagram { display: block; width: 640px; height: 460px; object-fit: contain; margin: 0 auto; }
+    .caption { margin-top: 6px; font-size: 13px; color: #65736A; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <section class="copy">
+      <div class="eyebrow"><span class="marker"></span> Shell architecture</div>
+      <h1>One shell, three navigation layers</h1>
+      <p class="intro">The mobile experience is organized around screen ownership, not a collection of permanently visible website sections.</p>
+      <div class="layer"><h2>01 · Contextual app bar</h2><p>Compact identity, menu access, and back action.</p></div>
+      <div class="layer"><h2>02 · Active screen container</h2><p>Mounts only the selected module in the main area.</p></div>
+      <div class="layer"><h2>03 · Mobile navigation</h2><p>Primary actions in the bottom bar; secondary in drawer.</p></div>
+      <div class="layer"><h2>Permission boundary</h2><p>Admin-only routes remain protected.</p></div>
+    </section>
+    <section class="visual">
+      <img class="diagram" src="/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/navigation-architecture.png" alt="Authenticated mobile shell architecture diagram" />
+      <p class="caption">The shell funnels all navigation into one visible main screen.</p>
+    </section>
+  </div>
+</body>
+</html>

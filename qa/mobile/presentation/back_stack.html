@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>Android back is predictable</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #ffffff; 
+      color: #2D3732; 
+      font-family: Arial, Helvetica, sans-serif; 
+      display: grid; 
+      grid-template-columns: 1fr 1.2fr 1.2fr; 
+    }
+    .col-intro { padding-top: 68px; padding-left: 58px; padding-right: 42px; }
+    /* Make flows use horizontal layout to reduce vertical stacking */
+    .col-flows { border-left: 8px solid #4CAF50; padding-top: 68px; padding-left: 42px; padding-right: 42px; display: flex; gap: 22px; align-items: flex-start; }
+    .col-impl { border-left: 1px solid #D5DED7; padding-top: 68px; padding-left: 42px; padding-right: 58px; }
+    
+    .eyebrow { color: #4CAF50; text-transform: uppercase; letter-spacing: 2.5px; font-size: 14px; font-weight: 700; margin-bottom: 18px; }
+    .marker { display: inline-block; width: 11px; height: 11px; background: #4CAF50; margin-right: 10px; }
+    
+    h1, h2 { margin: 0; color: #1A3621; font-family: Georgia, 'Times New Roman', serif; font-weight: 900; }
+    h1 { font-size: 45px; line-height: 1.02; letter-spacing: -0.8px; margin-bottom: 24px; }
+    h2 { font-size: 28px; line-height: 1.1; margin-bottom: 24px; }
+    
+    .lead { font-size: 21px; line-height: 1.38; color: #526057; }
+    
+    /* Reduce vertical gaps in flow sections */
+    .flow-section { margin-bottom: 0; flex: 1; }
+    .flow-title { color: #4CAF50; text-transform: uppercase; letter-spacing: 1.8px; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+    
+    .flow-step { 
+      background: #F4F7F5; 
+      border: 1px solid #D5DED7; 
+      padding: 8px 12px; 
+      font-size: 16px; 
+      font-weight: 700; 
+      color: #1A3621; 
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .flow-arrow { 
+      text-align: center; 
+      color: #4CAF50; 
+      font-size: 20px; 
+      font-weight: 900; 
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin-bottom: 8px;
+    }
+    
+    .impl-list { list-style: none; padding: 0; margin: 0; }
+    .impl-item { display: flex; align-items: flex-start; margin-bottom: 16px; font-size: 19px; line-height: 1.45; }
+    .impl-item .marker { margin-top: 8px; flex-shrink: 0; }
+    .impl-item strong { color: #1A3621; display: block; margin-bottom: 4px; }
+    
+    .footer { position: fixed; left: 58px; bottom: 26px; font-size: 13px; color: #65736A; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <section class="col-intro">
+      <div class="eyebrow"><span class="marker"></span> Navigation State</div>
+      <h1>Android back is predictable</h1>
+      <p class="lead">The application integrates natively with the device's back button, ensuring users never get trapped in overlapping views or hidden sections.</p>
+    </section>
+    
+    <section class="col-flows">
+      <div class="flow-section">
+        <div class="flow-title">Forward Flow</div>
+        <div class="flow-step">Dashboard</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step">Inventory</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step">Product Details</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step">Edit &amp; Save</div>
+      </div>
+      <div class="flow-section">
+        <div class="flow-title">Back Flow</div>
+        <div class="flow-step">Edit</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step">Product Details</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step">Inventory</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step">Dashboard</div>
+      </div>
+    </section>
+    
+    <section class="col-impl">
+      <h2>Implementation Result</h2>
+      <ul class="impl-list">
+        <li class="impl-item">
+          <span class="marker"></span>
+          <div>
+            <strong>Browser History Integration</strong>
+            Navigation records the current screen in browser history.
+          </div>
+        </li>
+        <li class="impl-item">
+          <span class="marker"></span>
+          <div>
+            <strong>Native Back Support</strong>
+            Android and browser back reliably return to previous screens.
+          </div>
+        </li>
+        <li class="impl-item">
+          <span class="marker"></span>
+          <div>
+            <strong>Clean State Management</strong>
+            The drawer closes during route changes to avoid stale sections.
+          </div>
+        </li>
+        <li class="impl-item">
+          <span class="marker"></span>
+          <div>
+            <strong>Stable Root Screen</strong>
+            Dashboard stays as the shell root preventing unexpected exits.
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+    <div class="footer">Kisan Dost Agro Manager · Mobile navigation review</div>
+  </div>
+</body>
+</html>

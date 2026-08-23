@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>Performance and delivery are ready</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #ffffff; 
+      color: #2D3732; 
+      font-family: Arial, Helvetica, sans-serif; 
+      display: grid; 
+      grid-template-columns: 1.05fr 1.2fr 1.2fr; 
+    }
+    .col1 { padding-top: 68px; padding-left: 58px; padding-right: 42px; }
+    .col2 { border-left: 8px solid #4CAF50; padding-top: 68px; padding-left: 42px; padding-right: 42px; }
+    .col3 { border-left: 1px solid #D5DED7; padding-top: 68px; padding-left: 42px; padding-right: 58px; }
+    
+    .eyebrow { color: #4CAF50; text-transform: uppercase; letter-spacing: 2.5px; font-size: 14px; font-weight: 700; margin-bottom: 18px; }
+    .marker { display: inline-block; width: 11px; height: 11px; background: #4CAF50; margin-right: 10px; flex-shrink: 0; }
+    
+    h1, h2 { margin: 0; color: #1A3621; font-family: Georgia, 'Times New Roman', serif; font-weight: 900; }
+    h1 { font-size: 45px; line-height: 1.02; letter-spacing: -0.8px; margin-bottom: 24px; }
+    h2 { font-size: 28px; line-height: 1.1; margin-bottom: 32px; }
+    
+    .metric { margin-bottom: 32px; }
+    .metric-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: #526057; font-weight: 700; margin-bottom: 4px; }
+    .metric-value { font-size: 42px; font-family: Georgia, 'Times New Roman', serif; font-weight: 900; color: #1A3621; line-height: 1; }
+    .metric-sub { font-size: 15px; color: #65736A; margin-top: 6px; }
+    
+    .status-list { display: flex; flexDirection: column; gap: 16px; margin-bottom: 48px; }
+    .status-item { display: flex; align-items: flex-start; }
+    .status-item .marker { margin-top: 6px; }
+    .status-text { font-size: 19px; line-height: 1.4; }
+    .status-text strong { color: #1A3621; }
+    
+    .commit-box { border-top: 2px solid #1A3621; padding-top: 24px; }
+    .commit-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: #526057; font-weight: 700; margin-bottom: 12px; }
+    .commit-hash { font-family: 'Courier New', Courier, monospace; font-size: 17px; background: #F0F4F1; padding: 12px 16px; color: #1A3621; font-weight: 700; word-break: break-all; display: inline-block; }
+    
+    .footer { position: fixed; left: 58px; bottom: 26px; font-size: 13px; color: #65736A; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <section class="col1">
+      <div class="eyebrow"><span class="marker"></span> Final Review</div>
+      <h1>Performance and delivery are ready</h1>
+    </section>
+    
+    <section class="col2">
+      <h2>Session metrics</h2>
+      
+      <div class="metric">
+        <div class="metric-label">DOM Interactive</div>
+        <div class="metric-value">59 ms</div>
+        <div class="metric-sub">DOMContentLoaded at 572 ms</div>
+      </div>
+      
+      <div class="metric">
+        <div class="metric-label">Load Completion</div>
+        <div class="metric-value">1,014 ms</div>
+        <div class="metric-sub">0 layout-shift entries</div>
+      </div>
+      
+      <div class="metric">
+        <div class="metric-label">Resource Footprint</div>
+        <div class="metric-value">64 total</div>
+        <div class="metric-sub">Includes 10 JavaScript resources</div>
+      </div>
+    </section>
+    
+    <section class="col3">
+      <h2>Delivery status</h2>
+      
+      <div class="status-list">
+        <div class="status-item">
+          <span class="marker"></span>
+          <div class="status-text"><strong>Build passed</strong> successfully.</div>
+        </div>
+        <div class="status-item">
+          <span class="marker"></span>
+          <div class="status-text"><strong>Lint passed</strong> with 0 errors (two existing warnings remain in formatters).</div>
+        </div>
+        <div class="status-item">
+          <span class="marker"></span>
+          <div class="status-text"><strong>Diff check passed</strong> with clean formatting.</div>
+        </div>
+        <div class="status-item">
+          <span class="marker"></span>
+          <div class="status-text"><strong>Follow-up changes</strong> pushed to main branch.</div>
+        </div>
+      </div>
+      
+      <div class="commit-box">
+        <div class="commit-label">Latest Commit</div>
+        <div class="commit-hash">e37d67d857773d9090cf4f62796c8f72848e249a</div>
+      </div>
+    </section>
+    
+    <div class="footer">Kisan Dost Agro Manager · Mobile navigation review</div>
+  </div>
+</body>
+</html>

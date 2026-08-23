@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>The app now behaves like an app</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .slide-container { width: 1280px; min-height: 680px; background: #ffffff; color: #2D3732; font-family: Arial, Helvetica, sans-serif; display: grid; grid-template-columns: 1.05fr 1.2fr 1.2fr; }
+    .intro { padding-top: 68px; padding-left: 58px; padding-right: 42px; }
+    .rule { border-left: 8px solid #4CAF50; padding-top: 48px; padding-left: 42px; padding-right: 42px; }
+    .last { border-left: 1px solid #D5DED7; padding-top: 48px; padding-left: 42px; padding-right: 58px; }
+    .eyebrow { color: #4CAF50; text-transform: uppercase; letter-spacing: 2.5px; font-size: 14px; font-weight: 700; margin-bottom: 18px; }
+    h1, h2 { margin: 0; color: #1A3621; font-family: Georgia, 'Times New Roman', serif; font-weight: 900; }
+    h1 { font-size: 45px; line-height: 1.02; letter-spacing: -0.8px; }
+    h2 { font-size: 28px; line-height: 1.1; margin-bottom: 18px; }
+    .lead { margin-top: 18px; font-size: 21px; line-height: 1.38; color: #526057; }
+    .marker { display: inline-block; width: 11px; height: 11px; background: #4CAF50; margin-right: 10px; }
+    .label { color: #4CAF50; text-transform: uppercase; letter-spacing: 1.8px; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+    .copy { font-size: 19px; line-height: 1.43; max-width: 310px; margin-bottom: 8px; }
+    .copy strong { color: #1A3621; }
+    .outcome { margin-top: 24px; border-top: 2px solid #1A3621; padding-top: 12px; font-size: 18px; line-height: 1.45; }
+    .outcome strong { color: #1A3621; }
+    .footer { position: fixed; left: 58px; bottom: 18px; font-size: 13px; color: #65736A; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <section class="intro">
+      <div class="eyebrow"><span class="marker"></span> Core change</div>
+      <h1>The app now behaves like an app</h1>
+      <p class="lead">The fix targets the Android experience without changing the existing business system underneath.</p>
+    </section>
+    <section class="rule">
+      <div class="label">01 · Before</div>
+      <h2>Website-like stacking</h2>
+      <p class="copy">Desktop-oriented grids, nested viewport heights, and mounted sections could make a phone screen feel layered and crowded.</p>
+      <div class="outcome"><strong>Risk:</strong><br />hidden content, duplicated navigation, and unclear screen ownership.</div>
+    </section>
+    <section class="last">
+      <div class="label">02 · After</div>
+      <h2>One active screen</h2>
+      <p class="copy">The authenticated shell now mounts one selected module inside a dedicated screen container and transitions through explicit history state.</p>
+      <div class="outcome"><strong>Outcome:</strong><br />clear screen replacement, predictable back behavior, and no stale main section underneath.</div>
+    </section>
+    <div class="footer">Kisan Dost Agro Manager · Mobile navigation review</div>
+  </div>
+</body>
+</html>

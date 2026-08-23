@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>Narrow screens pass the core layout checks</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    .slide-container { width: 1280px; min-height: 720px; background: #ffffff; color: #2D3732; font-family: Arial, Helvetica, sans-serif; display: grid; grid-template-columns: 1fr 1.2fr 1.2fr; }
+    .col-1 { padding-top: 58px; padding-left: 58px; padding-right: 42px; }
+    .col-2 { border-left: 8px solid #4CAF50; padding-top: 58px; padding-left: 42px; padding-right: 42px; }
+    .col-3 { border-left: 1px solid #D5DED7; padding-top: 58px; padding-left: 42px; padding-right: 58px; display: flex; flex-direction: column; align-items: center; }
+    .eyebrow { color: #4CAF50; text-transform: uppercase; letter-spacing: 2.5px; font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+    .marker { display: inline-block; width: 11px; height: 11px; background: #4CAF50; margin-right: 10px; }
+    h1 { margin: 0 0 20px; color: #1A3621; font-family: Georgia, 'Times New Roman', serif; font-size: 42px; line-height: 1.05; font-weight: 900; letter-spacing: -0.5px; }
+    .intro { font-size: 19px; line-height: 1.45; color: #526057; margin-bottom: 24px; }
+    .disclaimer { margin-top: 36px; padding-top: 12px; border-top: 2px solid #1A3621; font-size: 15px; line-height: 1.4; color: #65736A; }
+    
+    .check-item { margin-bottom: 18px; border-bottom: 1px solid #D5DED7; padding-bottom: 12px; }
+    .check-item:last-child { border-bottom: none; }
+    .check-title { color: #4CAF50; text-transform: uppercase; letter-spacing: 1.5px; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .check-result { font-size: 18px; line-height: 1.35; font-weight: 700; color: #1A3621; }
+    .check-desc { font-size: 15px; line-height: 1.35; color: #526057; margin-top: 4px; }
+    
+    .screenshot { width: 300px; height: 480px; object-fit: contain; border: 1px solid #D5DED7; }
+    .caption { margin-top: 12px; font-size: 13px; color: #65736A; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <section class="col-1">
+      <div class="eyebrow"><span class="marker"></span> QA &amp; Validation</div>
+      <h1>Narrow screens pass the core layout checks</h1>
+      <p class="intro">Authenticated device-metrics emulation covered Dashboard, Billing, and Inventory at <strong>360, 375, 390, 412, 430, and 768 px</strong> widths.</p>
+      <div class="disclaimer"><strong>Note:</strong> This is a browser emulation pass, not a physical Android handset certification.</div>
+    </section>
+    
+    <section class="col-2">
+      <div class="check-item">
+        <div class="check-title">Horizontal overflow</div>
+        <div class="check-result">False at every tested route and width</div>
+      </div>
+      <div class="check-item">
+        <div class="check-title">Visible main screens</div>
+        <div class="check-result">Exactly one per route</div>
+      </div>
+      <div class="check-item">
+        <div class="check-title">Phone navigation</div>
+        <div class="check-result">Visible below the tablet breakpoint</div>
+      </div>
+      <div class="check-item">
+        <div class="check-title">Tablet behavior</div>
+        <div class="check-result">Bottom bar hidden at 768 px</div>
+        <div class="check-desc">Drawer/footer pattern retained</div>
+      </div>
+      <div class="check-item">
+        <div class="check-title">Layout-shift entries</div>
+        <div class="check-result">0 in the loaded session</div>
+      </div>
+    </section>
+    
+    <section class="col-3">
+      <img class="screenshot" src="/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-768.png" alt="Tablet inventory layout" />
+      <p class="caption">Tablet layout at 768px width</p>
+    </section>
+  </div>
+</body>
+</html>
