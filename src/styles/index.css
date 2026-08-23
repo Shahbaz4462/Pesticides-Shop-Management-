@@ -1116,3 +1116,63 @@ body {
     display: none;
   }
 }
+
+/* Remaining responsive edge-case protections */
+@media (max-width: 600px) {
+  .toast-container {
+    top: calc(72px + env(safe-area-inset-top, 0px)) !important;
+    right: 12px !important;
+    left: 12px !important;
+  }
+
+  .toast-item {
+    min-width: 0 !important;
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .responsive-table-container {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .custom-table {
+    min-width: 620px;
+  }
+
+  .app-main h1 {
+    font-size: clamp(1.35rem, 6vw, 2rem);
+    line-height: 1.15;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .app-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mobile-bottom-nav {
+    grid-template-columns: repeat(6, minmax(72px, 1fr));
+  }
+
+  .app-navbar__brand h1,
+  .app-navbar__brand p {
+    max-width: 42vw;
+  }
+}
+
+/* Tablets retain footer space and use the desktop-style menu entry rather than a fixed bottom bar. */
+@media (min-width: 641px) and (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+
+  .app-main {
+    padding-bottom: 32px !important;
+  }
+
+  .app-footer {
+    display: block;
+  }
+}

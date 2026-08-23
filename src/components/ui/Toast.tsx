@@ -74,6 +74,7 @@ const ToastItem: React.FC<ToastItemProps> = ({ toast, onRemove }) => {
 
   return (
     <div
+      className="toast-item"
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -129,6 +130,7 @@ interface ToastContainerProps {
 export const ToastContainer: React.FC<ToastContainerProps> = ({ toasts, onRemove }) => {
   return (
     <div
+      className="toast-container"
       style={{
         position: 'fixed',
         top: '80px',
