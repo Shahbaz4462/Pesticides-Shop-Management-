@@ -88,7 +88,8 @@ export const SalesHistoryView: React.FC<Props> = ({ settings }) => {
           <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>No Sales History Found</h3>
         </div>
       ) : (
-        <div className="responsive-table-container">
+        <>
+        <div className="responsive-table-container sales-history-table">
           <table className="custom-table">
             <thead>
               <tr>
@@ -171,6 +172,47 @@ export const SalesHistoryView: React.FC<Props> = ({ settings }) => {
             </tbody>
           </table>
         </div>
+        <div className="sales-history-mobile-list">
+          {filteredSales.map(sale => (
+            <article className="sales-history-card" key={sale.id}>
+              <div className="sales-history-card__header">
+                <div>
+                  <strong>{sale.billNumber}</strong>
+                  <span>{formatDateTime(sale.createdAt)}</span>
+                </div>
+                <span className={`badge ${sale.dueAmount > 0 ? 'badge-warning' : 'badge-success'}`}>
+                  {sale.dueAmount > 0 ? `Due: ${formatPKR(sale.dueAmount)}` : 'PAID'}
+                </span>
+              </div>
+              <div className="sales-history-card__customer">
+                <strong>{sale.customerName}</strong>
+                {sale.customerPhone && <span>{sale.customerPhone}</span>}
+                <span>{sale.paymentMethod.replace('_', ' ')}</span>
+              </div>
+              <div className="sales-history-card__totals">
+                <div><span>Total</span><strong>{formatPKR(sale.totalAmount)}</strong></div>
+                <div><span>Paid</span><strong>{formatPKR(sale.paidAmount)}</strong></div>
+                <div><span>Due</span><strong>{formatPKR(sale.dueAmount)}</strong></div>
+              </div>
+              <div className="sales-history-card__actions">
+                <button className="btn btn-secondary" onClick={() => { setSelectedSale(sale); setIsInvoiceOpen(true); }}>
+                  <Printer size={16} /> Print
+                </button>
+                {canEdit && (
+                  <>
+                    <button className="btn btn-secondary" onClick={() => handleEditSale(sale)}>
+                      <Edit2 size={16} /> Edit
+                    </button>
+                    <button className="btn btn-secondary" onClick={() => handleViewHistory(sale)}>
+                      <History size={16} /> History
+                    </button>
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+        </>
       )}
 
       {/* Invoice Modal */}

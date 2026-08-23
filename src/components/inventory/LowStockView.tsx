@@ -45,7 +45,7 @@ export const LowStockView: React.FC<Props> = ({ setActiveTab }) => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       {/* Banner */}
       <div 
-        className="card-3d"
+        className="card-3d low-stock-banner"
         style={{
           padding: '24px',
           background: 'linear-gradient(135deg, rgba(217, 119, 6, 0.25), rgba(120, 53, 15, 0.4))',
@@ -72,7 +72,7 @@ export const LowStockView: React.FC<Props> = ({ setActiveTab }) => {
           >
             <AlertTriangle size={26} />
           </div>
-          <div>
+          <div className="low-stock-banner__copy">
             <h2 style={{ fontSize: '1.3rem', fontWeight: 800 }}>Low Stock & Out of Stock Alerts</h2>
             <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)' }}>
               Products below their configured minimum safety stock levels requiring immediate reordering.
@@ -80,7 +80,7 @@ export const LowStockView: React.FC<Props> = ({ setActiveTab }) => {
           </div>
         </div>
 
-        <button className="btn btn-primary" onClick={() => setActiveTab('purchases')}>
+        <button className="btn btn-primary low-stock-banner__action" onClick={() => setActiveTab('purchases')}>
           <Truck size={18} />
           <span>Record Supplier Intake</span>
         </button>

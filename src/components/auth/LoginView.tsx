@@ -49,9 +49,11 @@ export const LoginView: React.FC<Props> = ({ onLogin, settings }) => {
   };
 
   return (
-    <div 
-      style={{
-        minHeight: '100vh',
+    <div
+        className="login-screen"
+        style={{
+          minHeight: '100vh',
+
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -60,7 +62,7 @@ export const LoginView: React.FC<Props> = ({ onLogin, settings }) => {
       }}
     >
       <div 
-        className="card-3d"
+        className="card-3d login-card"
         style={{
           width: '100%',
           maxWidth: '420px',
@@ -70,6 +72,7 @@ export const LoginView: React.FC<Props> = ({ onLogin, settings }) => {
       >
         {/* Logo */}
         <div 
+          className="login-logo"
           style={{
             width: '80px',
             height: '80px',

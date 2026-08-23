@@ -13,15 +13,15 @@
     "bottomNavVisible": true,
     "mainRect": {
       "x": 0,
-      "y": 64.96875,
+      "y": 65,
       "width": 352,
-      "height": 8651.59375
+      "height": 8612.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -46,13 +46,13 @@
       "x": 0,
       "y": 65,
       "width": 367,
-      "height": 8563.625
+      "height": 8554.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -77,13 +77,13 @@
       "x": 0,
       "y": 65,
       "width": 382,
-      "height": 8733.625
+      "height": 8724.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -108,13 +108,13 @@
       "x": 0,
       "y": 65,
       "width": 404,
-      "height": 8733.625
+      "height": 8724.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -139,13 +139,13 @@
       "x": 0,
       "y": 65,
       "width": 422,
-      "height": 8691.65625
+      "height": 8682.984375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -176,7 +176,7 @@
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -201,13 +201,13 @@
       "x": 0,
       "y": 65,
       "width": 352,
-      "height": 3260.375
+      "height": 3254.375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -232,13 +232,13 @@
       "x": 0,
       "y": 65,
       "width": 367,
-      "height": 3226.59375
+      "height": 3220.59375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -263,13 +263,13 @@
       "x": 0,
       "y": 65,
       "width": 382,
-      "height": 2310.375
+      "height": 2304.375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -294,13 +294,13 @@
       "x": 0,
       "y": 65,
       "width": 404,
-      "height": 2294.375
+      "height": 2288.375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -325,13 +325,13 @@
       "x": 0,
       "y": 65,
       "width": 422,
-      "height": 2294.375
+      "height": 2288.375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -362,7 +362,7 @@
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -387,13 +387,13 @@
       "x": 0,
       "y": 65,
       "width": 352,
-      "height": 8651.625
+      "height": 8612.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -418,13 +418,13 @@
       "x": 0,
       "y": 65,
       "width": 367,
-      "height": 8563.625
+      "height": 8554.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -449,13 +449,13 @@
       "x": 0,
       "y": 65,
       "width": 382,
-      "height": 8733.625
+      "height": 8724.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -480,13 +480,13 @@
       "x": 0,
       "y": 65,
       "width": 404,
-      "height": 8733.625
+      "height": 8724.953125
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -511,13 +511,13 @@
       "x": 0,
       "y": 65,
       "width": 422,
-      "height": 8691.65625
+      "height": 8682.984375
     },
     "performance": {
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -548,7 +548,7 @@
       "domInteractive": 59,
       "domContentLoaded": 572,
       "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 64,
+      "resourceCount": 75,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -556,5 +556,191 @@
     "width": 768,
     "height": 1024,
     "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/inventory-768.png"
+  },
+  {
+    "route": "?screen=sales-history",
+    "viewport": {
+      "width": 360,
+      "height": 844
+    },
+    "documentWidth": 360,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 352,
+      "height": 2413.328125
+    },
+    "performance": {
+      "domInteractive": 59,
+      "domContentLoaded": 572,
+      "loadEventEnd": 1013.7000000000116,
+      "resourceCount": 75,
+      "scriptCount": 10,
+      "layoutShiftEntries": 0
+    },
+    "routeName": "sales-history",
+    "width": 360,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/sales-history-360.png"
+  },
+  {
+    "route": "?screen=sales-history",
+    "viewport": {
+      "width": 375,
+      "height": 844
+    },
+    "documentWidth": 375,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 367,
+      "height": 2323.328125
+    },
+    "performance": {
+      "domInteractive": 59,
+      "domContentLoaded": 572,
+      "loadEventEnd": 1013.7000000000116,
+      "resourceCount": 75,
+      "scriptCount": 10,
+      "layoutShiftEntries": 0
+    },
+    "routeName": "sales-history",
+    "width": 375,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/sales-history-375.png"
+  },
+  {
+    "route": "?screen=sales-history",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "documentWidth": 390,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 382,
+      "height": 2335.328125
+    },
+    "performance": {
+      "domInteractive": 59,
+      "domContentLoaded": 572,
+      "loadEventEnd": 1013.7000000000116,
+      "resourceCount": 75,
+      "scriptCount": 10,
+      "layoutShiftEntries": 0
+    },
+    "routeName": "sales-history",
+    "width": 390,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/sales-history-390.png"
+  },
+  {
+    "route": "?screen=sales-history",
+    "viewport": {
+      "width": 412,
+      "height": 844
+    },
+    "documentWidth": 412,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 404,
+      "height": 2335.328125
+    },
+    "performance": {
+      "domInteractive": 59,
+      "domContentLoaded": 572,
+      "loadEventEnd": 1013.7000000000116,
+      "resourceCount": 75,
+      "scriptCount": 10,
+      "layoutShiftEntries": 0
+    },
+    "routeName": "sales-history",
+    "width": 412,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/sales-history-412.png"
+  },
+  {
+    "route": "?screen=sales-history",
+    "viewport": {
+      "width": 430,
+      "height": 844
+    },
+    "documentWidth": 430,
+    "documentHeight": 844,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": true,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 422,
+      "height": 2335.328125
+    },
+    "performance": {
+      "domInteractive": 59,
+      "domContentLoaded": 572,
+      "loadEventEnd": 1013.7000000000116,
+      "resourceCount": 75,
+      "scriptCount": 10,
+      "layoutShiftEntries": 0
+    },
+    "routeName": "sales-history",
+    "width": 430,
+    "height": 844,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/sales-history-430.png"
+  },
+  {
+    "route": "?screen=sales-history",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "documentWidth": 768,
+    "documentHeight": 1024,
+    "horizontalOverflow": false,
+    "visibleMainChildren": 1,
+    "fixedElements": 4,
+    "bottomNavVisible": false,
+    "mainRect": {
+      "x": 0,
+      "y": 65,
+      "width": 768,
+      "height": 910
+    },
+    "performance": {
+      "domInteractive": 59,
+      "domContentLoaded": 572,
+      "loadEventEnd": 1013.7000000000116,
+      "resourceCount": 75,
+      "scriptCount": 10,
+      "layoutShiftEntries": 0
+    },
+    "routeName": "sales-history",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/sales-history-768.png"
   }
 ]

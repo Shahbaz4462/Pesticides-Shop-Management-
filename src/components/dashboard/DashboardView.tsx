@@ -53,10 +53,10 @@ export const DashboardView: React.FC<Props> = ({ setActiveTab }) => {
   const recentSales = [...sales].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 5);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div className="dashboard-screen" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Banner / Welcome Bar */}
       <div 
-        className="card-3d"
+        className="card-3d dashboard-overview"
         style={{
           padding: '24px 28px',
           background: 'linear-gradient(135deg, rgba(5, 104, 56, 0.9), rgba(2, 44, 25, 0.95))',
@@ -74,14 +74,15 @@ export const DashboardView: React.FC<Props> = ({ setActiveTab }) => {
             <span style={{ fontSize: '0.8rem', color: 'var(--primary-300)' }}>• Offline Storage Active</span>
           </div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff' }}>
-            🌾 Pakistan Pesticide & Agriculture Dashboard
+            <span className="desktop-only">🌾 Pakistan Pesticide & Agriculture Dashboard</span>
+            <span className="mobile-only" style={{ display: 'none' }}>Business Overview</span>
           </h2>
-          <p style={{ color: 'var(--primary-100)', fontSize: '0.92rem', marginTop: '4px' }}>
+          <p className="dashboard-overview__description" style={{ color: 'var(--primary-100)', fontSize: '0.92rem', marginTop: '4px' }}>
             Real-time local tracking for inventory, daily sales billing, supplier purchases & farmer udhar ledger.
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '12px' }}>
+        <div className="dashboard-overview__actions" style={{ display: 'flex', gap: '12px' }}>
           <button 
             className="btn btn-primary"
             onClick={() => setActiveTab('billing')}
@@ -100,10 +101,17 @@ export const DashboardView: React.FC<Props> = ({ setActiveTab }) => {
             <span>Add Product</span>
           </button>
         </div>
+        <div className="dashboard-overview__stats" aria-label="Today summary">
+          <div><strong>{formatPKR(todaySalesTotal)}</strong><span>Sales today</span></div>
+          <div><strong>{formatPKR(todayPurchasesTotal)}</strong><span>Purchases</span></div>
+          <div><strong>{formatPKR(totalCustomerUdhar)}</strong><span>Customer due</span></div>
+          <div><strong>{lowStockProducts.length + expiringProducts.length}</strong><span>Open alerts</span></div>
+        </div>
       </div>
 
       {/* KPI Grid */}
       <div 
+        className="dashboard-kpi-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -179,6 +187,7 @@ export const DashboardView: React.FC<Props> = ({ setActiveTab }) => {
 
       {/* Grid Section: Low Stock Warning + Recent Sales */}
       <div 
+        className="dashboard-activity-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',

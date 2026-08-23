@@ -38,7 +38,7 @@ export const KPICard: React.FC<Props> = ({
 
   return (
     <div 
-      className="card-3d"
+      className="card-3d kpi-card"
       onClick={onClick}
       style={{
         padding: '20px 22px',
@@ -51,15 +51,16 @@ export const KPICard: React.FC<Props> = ({
     >
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
         <div>
-          <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+          <span className="kpi-card__title" style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             {title}
           </span>
-          <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '4px', lineHeight: 1.1 }}>
+          <div className="kpi-card__value" style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '4px', lineHeight: 1.1 }}>
             {displayValue}
           </div>
         </div>
 
         <div 
+          className="kpi-card__icon"
           style={{
             width: '48px',
             height: '48px',
@@ -78,7 +79,7 @@ export const KPICard: React.FC<Props> = ({
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px' }}>
         {subtitle ? (
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 500 }}>
+          <span className="kpi-card__subtitle" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 500 }}>
             {subtitle}
           </span>
         ) : <div />}
