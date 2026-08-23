@@ -130,6 +130,7 @@ export interface StockLog {
 export interface ShopSettings {
   id?: number;
   shopName: string;
+  logoDataUrl?: string;
   tagline: string;
   phone: string;
   address: string;

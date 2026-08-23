@@ -71,7 +71,7 @@ export const DashboardView: React.FC<Props> = ({ setActiveTab }) => {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
             <span className="badge badge-success">Live Business Overview</span>
-            <span style={{ fontSize: '0.8rem', color: 'var(--primary-300)' }}>• Offline Storage Active</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--primary-300)' }}>• Live data</span>
           </div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff' }}>
             <span className="desktop-only">🌾 Pakistan Pesticide & Agriculture Dashboard</span>

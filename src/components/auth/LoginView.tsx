@@ -86,7 +86,11 @@ export const LoginView: React.FC<Props> = ({ onLogin, settings }) => {
             boxShadow: '0 8px 25px rgba(16, 185, 129, 0.4)'
           }}
         >
-          <Sprout size={40} />
+          {settings?.logoDataUrl ? (
+            <img src={settings.logoDataUrl} alt="Official shop logo" className="shop-logo__image shop-logo__image--login" />
+          ) : (
+            <Sprout size={40} aria-hidden="true" />
+          )}
         </div>
 
         <h1 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '4px' }}>

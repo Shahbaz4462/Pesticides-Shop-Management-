@@ -42,16 +42,17 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
   const [completedSale, setCompletedSale] = useState<Sale | null>(null);
   const [isInvoiceModalOpen, setIsInvoiceModalOpen] = useState(false);
 
-  // Filtered Products for Billing Grid
-  const billingProducts = products.filter(p => {
-    const matchesSearch = 
-      p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      p.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (p.sku && p.sku.toLowerCase().includes(searchTerm.toLowerCase()));
-
-    const matchesCategory = selectedCategory === 'ALL' || p.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Search-first product discovery: do not render the full catalog until the user searches.
+  const normalizedSearch = searchTerm.trim().toLowerCase();
+  const searchTokens = normalizedSearch.split(/\s+/).filter(Boolean);
+  const billingProducts = searchTokens.length === 0
+    ? []
+    : products.filter(p => {
+        const searchableText = `${p.name} ${p.brand} ${p.sku || ''}`.toLowerCase();
+        const matchesSearch = searchTokens.every(token => searchableText.includes(token));
+        const matchesCategory = selectedCategory === 'ALL' || p.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+      }).slice(0, 24);
 
   // Cart Calculations
   const subtotal = cart.reduce((sum, item) => sum + item.subtotal, 0);
@@ -258,7 +259,19 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
             paddingRight: '4px'
           }}
         >
-          {billingProducts.map(p => {
+          {searchTokens.length === 0 ? (
+            <div className="billing-search-empty">
+              <Search size={28} aria-hidden="true" />
+              <strong>Search products to add to the sale</strong>
+              <span>Use any part of a product name, brand, or SKU.</span>
+            </div>
+          ) : billingProducts.length === 0 ? (
+            <div className="billing-search-empty">
+              <Package size={28} aria-hidden="true" />
+              <strong>No matching products</strong>
+              <span>Try another word or clear the category filter.</span>
+            </div>
+          ) : billingProducts.map(p => {
             const isOutOfStock = p.stockQty <= 0;
             return (
               <div

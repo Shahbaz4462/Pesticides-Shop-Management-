@@ -111,12 +111,14 @@ export const ReportsView: React.FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div className="reports-screen" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+
       {/* Header */}
-      <div 
-        className="card-3d"
-        style={{
-          padding: '20px 24px',
+              <div
+          className="card-3d reports-header"
+          style={{
+            padding: '20px 24px',
+
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
@@ -131,7 +133,7 @@ export const ReportsView: React.FC = () => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div className="reports-header__actions" style={{ display: 'flex', gap: '10px' }}>
           <select 
             className="form-select" 
             style={{ width: 'auto', minWidth: '150px' }}
@@ -151,7 +153,7 @@ export const ReportsView: React.FC = () => {
       </div>
 
       {/* KPI Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+      <div className="reports-kpi-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
         <div className="card-3d" style={{ padding: '20px' }}>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>TOTAL SALES REVENUE</span>
           <div style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--primary-400)', marginTop: '4px' }}>
@@ -180,7 +182,7 @@ export const ReportsView: React.FC = () => {
       </div>
 
       {/* Charts Section */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px' }}>
+      <div className="reports-chart-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px' }}>
         {/* Daily Sales Trend Chart */}
         <div className="card-3d" style={{ padding: '20px' }}>
           <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>

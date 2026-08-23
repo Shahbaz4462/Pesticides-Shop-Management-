@@ -204,7 +204,7 @@ export const Sidebar: React.FC<Props> = ({
           }}
         >
           <p style={{ fontWeight: 700, color: 'var(--primary-400)' }}>Pesticide Shop Management</p>
-          <p>Version 3.0 • Pakistan Offline Edition</p>
+          <p>Version 3.0 • Pakistan Edition</p>
         </div>
       </aside>
     </>

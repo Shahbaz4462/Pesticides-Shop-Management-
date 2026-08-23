@@ -217,7 +217,7 @@ export const App: React.FC = () => {
         </div>
       </main>
       <footer className="app-footer no-print">
-        Kisan Dost Agro Pesticide Management • Designed for Agricultural Retail Shops in Pakistan • Offline First Storage
+        Kisan Dost Agro Pesticide Management • Designed for Agricultural Retail Shops in Pakistan
       </footer>
       <MobileBottomNav
         activeTab={activeTab}

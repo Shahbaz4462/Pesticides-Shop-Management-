@@ -3,7 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db, seedInitialDataIfEmpty } from '../../db/database';
 import type { ShopSettings } from '../../types';
 import { exportDatabaseBackup, restoreDatabaseBackup } from '../../utils/formatters';
-import { Save, Download, Upload, RefreshCw, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { Save, Download, Upload, RefreshCw, ShieldAlert, CheckCircle2, Trash2, Sprout } from 'lucide-react';
 
 export const SettingsView: React.FC = () => {
   const settingsList = useLiveQuery(() => db.settings.toArray(), []) || [];
@@ -26,6 +26,7 @@ export const SettingsView: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
+  const [logoError, setLogoError] = useState('');
 
   useEffect(() => {
     if (currentSettings) {
@@ -49,6 +50,60 @@ export const SettingsView: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+
+    const allowedTypes = ['image/png', 'image/jpeg', 'image/webp'];
+    if (!allowedTypes.includes(file.type)) {
+      setLogoError('Choose a PNG, JPG/JPEG, or WebP image.');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setLogoError('Logo must be smaller than 5 MB.');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = new window.Image();
+      image.onload = () => {
+        if (image.width < 64 || image.height < 64) {
+          setLogoError('Logo must be at least 64 × 64 pixels.');
+          return;
+        }
+        if (image.width > 4096 || image.height > 4096) {
+          setLogoError('Logo dimensions must not exceed 4096 × 4096 pixels.');
+          return;
+        }
+
+        const maxDimension = 512;
+        const scale = Math.min(1, maxDimension / Math.max(image.width, image.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        const context = canvas.getContext('2d');
+        if (!context) {
+          setLogoError('This image could not be prepared. Try another file.');
+          return;
+        }
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        setFormData(prev => ({ ...prev, logoDataUrl: canvas.toDataURL('image/webp', 0.88) }));
+        setLogoError('');
+      };
+      image.onerror = () => setLogoError('This image could not be read. Try another file.');
+      image.src = String(reader.result);
+    };
+    reader.onerror = () => setLogoError('This image could not be read. Try another file.');
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoveLogo = () => {
+    setFormData(prev => ({ ...prev, logoDataUrl: undefined }));
+    setLogoError('');
   };
 
   // Export JSON Backup
@@ -115,7 +170,7 @@ export const SettingsView: React.FC = () => {
         <div>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 800 }}>Shop Profile & Data Management</h2>
           <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)' }}>
-            Configure shop receipt info, thermal print settings, and local database backup/restore
+            Configure shop receipt information, print settings, and data backup/restore
           </p>
         </div>
       </div>
@@ -130,6 +185,33 @@ export const SettingsView: React.FC = () => {
         {/* Profile Settings Form */}
         <form onSubmit={handleSaveProfile} className="card-3d" style={{ padding: '24px' }}>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '16px' }}>Shop Profile Details</h3>
+
+          <div className="branding-panel">
+            <div className="branding-panel__preview">
+              {formData.logoDataUrl ? (
+                <img src={formData.logoDataUrl} alt="Official shop logo preview" />
+              ) : (
+                <Sprout size={28} aria-hidden="true" />
+              )}
+            </div>
+            <div className="branding-panel__content">
+              <div className="branding-panel__title">Shop Logo</div>
+              <p>Use a compact PNG, JPG, or WebP mark in the app header and login screen.</p>
+              <div className="branding-panel__actions">
+                <label className="btn btn-secondary">
+                  <Upload size={16} />
+                  <span>{formData.logoDataUrl ? 'Replace Logo' : 'Upload Logo'}</span>
+                  <input type="file" accept="image/png,image/jpeg,image/webp" onChange={handleLogoUpload} hidden />
+                </label>
+                <button type="button" className="btn btn-secondary" onClick={handleRemoveLogo} disabled={!formData.logoDataUrl}>
+                  <Trash2 size={16} />
+                  <span>Remove</span>
+                </button>
+              </div>
+              {logoError && <p className="branding-panel__error" role="alert">{logoError}</p>}
+              <p className="branding-panel__hint">Maximum 5 MB; images are resized proportionally before saving.</p>
+            </div>
+          </div>
 
           <div className="form-group">
             <label className="form-label">Shop Name</label>
@@ -258,7 +340,7 @@ export const SettingsView: React.FC = () => {
           <div className="card-3d" style={{ padding: '24px' }}>
             <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '10px' }}>Data Safety & Export Backup</h3>
             <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
-              Export all products, sales bills, customer ledgers, and supplier records into a local JSON backup file.
+              Export products, sales bills, customer ledgers, and supplier records into a JSON backup file.
             </p>
 
             <button className="btn btn-primary" onClick={handleExportBackup} style={{ width: '100%', marginBottom: '14px' }}>

@@ -85,11 +85,12 @@ export const Navbar: React.FC<Props> = ({
           onClick={() => setActiveTab('dashboard')} 
           style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
         >
-          <div 
+          <div
+            className="shop-logo shop-logo--header"
             style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '12px',
+              width: '36px',
+              height: '36px',
+              borderRadius: '10px',
               background: 'linear-gradient(135deg, var(--primary-600), var(--primary-800))',
               display: 'flex',
               alignItems: 'center',
@@ -99,14 +100,18 @@ export const Navbar: React.FC<Props> = ({
               transform: 'perspective(500px) rotateY(-10deg)'
             }}
           >
-            <Sprout size={24} />
+            {settings?.logoDataUrl ? (
+              <img src={settings.logoDataUrl} alt="Official shop logo" className="shop-logo__image" />
+            ) : (
+              <Sprout size={21} aria-hidden="true" />
+            )}
           </div>
           <div>
             <h1 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.1 }}>
               {settings?.shopName || 'Kisan Dost Pesticides'}
             </h1>
             <p style={{ fontSize: '0.75rem', color: 'var(--primary-400)', fontWeight: 500 }}>
-              {settings?.city ? `${settings.city} Branch • Offline Direct DB` : 'Pesticide & Agro Shop System'}
+              {settings?.city ? `${settings.city} Branch` : 'Pesticide & Agro Shop System'}
             </p>
           </div>
         </div>
@@ -121,7 +126,7 @@ export const Navbar: React.FC<Props> = ({
             onClick={() => setActiveTab('low-stock')}
             style={{ padding: '6px 12px', fontSize: '0.8rem' }}
           >
-            <AlertTriangle size={16} />
+            <AlertTriangle size={17} aria-hidden="true" />
             <span className="desktop-only">{lowStockCount} Low Stock</span>
             <span className="mobile-only" style={{ display: 'none' }}>{lowStockCount}</span>
           </button>
@@ -133,7 +138,7 @@ export const Navbar: React.FC<Props> = ({
           onClick={() => setActiveTab('billing')}
           style={{ padding: '8px 16px' }}
         >
-          <ShoppingCart size={18} />
+          <ShoppingCart size={18} aria-hidden="true" />
           <span className="desktop-only" style={{ fontWeight: 700 }}>New Sale (POS)</span>
           <span className="mobile-only" style={{ display: 'none', fontWeight: 700 }}>POS</span>
         </button>
@@ -173,7 +178,7 @@ export const Navbar: React.FC<Props> = ({
           onClick={onLogout}
           title="Logout"
         >
-          <LogOut size={18} />
+          <LogOut size={18} aria-hidden="true" />
         </button>
 
         {/* Theme Toggle */}
@@ -182,7 +187,7 @@ export const Navbar: React.FC<Props> = ({
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           title="Toggle Dark / Light Theme"
         >
-          {theme === 'dark' ? <Sun size={18} color="var(--accent-gold)" /> : <Moon size={18} />}
+          {theme === 'dark' ? <Sun size={18} color="var(--accent-gold)" aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
         </button>
       </div>
     </header>

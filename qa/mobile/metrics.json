@@ -1,6 +1,6 @@
 [
   {
-    "route": "?screen=products",
+    "route": "?screen=settings",
     "viewport": {
       "width": 360,
       "height": 844
@@ -13,15 +13,15 @@
     "bottomNavVisible": true,
     "mainRect": {
       "x": 0,
-      "y": 65,
+      "y": 64.96875,
       "width": 352,
-      "height": 8612.953125
+      "height": 2036.09375
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -31,7 +31,7 @@
     "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-360.png"
   },
   {
-    "route": "?screen=products",
+    "route": "?screen=settings",
     "viewport": {
       "width": 375,
       "height": 844
@@ -46,13 +46,13 @@
       "x": 0,
       "y": 65,
       "width": 367,
-      "height": 8554.953125
+      "height": 2036.21875
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -62,7 +62,7 @@
     "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-375.png"
   },
   {
-    "route": "?screen=products",
+    "route": "?screen=settings",
     "viewport": {
       "width": 390,
       "height": 844
@@ -77,13 +77,13 @@
       "x": 0,
       "y": 65,
       "width": 382,
-      "height": 8724.953125
+      "height": 2043.8125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -93,7 +93,7 @@
     "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-390.png"
   },
   {
-    "route": "?screen=products",
+    "route": "?screen=settings",
     "viewport": {
       "width": 412,
       "height": 844
@@ -108,13 +108,13 @@
       "x": 0,
       "y": 65,
       "width": 404,
-      "height": 8724.953125
+      "height": 1995.8125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -124,7 +124,7 @@
     "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-412.png"
   },
   {
-    "route": "?screen=products",
+    "route": "?screen=settings",
     "viewport": {
       "width": 430,
       "height": 844
@@ -139,13 +139,13 @@
       "x": 0,
       "y": 65,
       "width": 422,
-      "height": 8682.984375
+      "height": 1952.484375
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -155,7 +155,7 @@
     "screenshot": "/home/ubuntu/Pesticides-Shop-Management-/qa/mobile/dashboard-430.png"
   },
   {
-    "route": "?screen=products",
+    "route": "?screen=settings",
     "viewport": {
       "width": 768,
       "height": 1024
@@ -170,13 +170,13 @@
       "x": 0,
       "y": 65,
       "width": 760,
-      "height": 4391.78125
+      "height": 1541.5625
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -201,13 +201,13 @@
       "x": 0,
       "y": 65,
       "width": 352,
-      "height": 3254.375
+      "height": 1053
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -232,13 +232,13 @@
       "x": 0,
       "y": 65,
       "width": 367,
-      "height": 3220.59375
+      "height": 1053
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -263,13 +263,13 @@
       "x": 0,
       "y": 65,
       "width": 382,
-      "height": 2304.375
+      "height": 1057
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -294,13 +294,13 @@
       "x": 0,
       "y": 65,
       "width": 404,
-      "height": 2288.375
+      "height": 1041
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -325,13 +325,13 @@
       "x": 0,
       "y": 65,
       "width": 422,
-      "height": 2288.375
+      "height": 1041
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -356,13 +356,13 @@
       "x": 0,
       "y": 65,
       "width": 760,
-      "height": 1993.90625
+      "height": 1015
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -390,10 +390,10 @@
       "height": 8612.953125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -421,10 +421,10 @@
       "height": 8554.953125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -452,10 +452,10 @@
       "height": 8724.953125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -483,10 +483,10 @@
       "height": 8724.953125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -514,10 +514,10 @@
       "height": 8682.984375
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -545,10 +545,10 @@
       "height": 4391.78125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -573,13 +573,13 @@
       "x": 0,
       "y": 65,
       "width": 352,
-      "height": 2413.328125
+      "height": 2361.578125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -604,13 +604,13 @@
       "x": 0,
       "y": 65,
       "width": 367,
-      "height": 2323.328125
+      "height": 2361.578125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -635,13 +635,13 @@
       "x": 0,
       "y": 65,
       "width": 382,
-      "height": 2335.328125
+      "height": 2373.578125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -666,13 +666,13 @@
       "x": 0,
       "y": 65,
       "width": 404,
-      "height": 2335.328125
+      "height": 2373.578125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -697,13 +697,13 @@
       "x": 0,
       "y": 65,
       "width": 422,
-      "height": 2335.328125
+      "height": 2373.578125
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
@@ -731,10 +731,10 @@
       "height": 910
     },
     "performance": {
-      "domInteractive": 59,
-      "domContentLoaded": 572,
-      "loadEventEnd": 1013.7000000000116,
-      "resourceCount": 75,
+      "domInteractive": 51.5,
+      "domContentLoaded": 608.6000000005588,
+      "loadEventEnd": 638.5,
+      "resourceCount": 54,
       "scriptCount": 10,
       "layoutShiftEntries": 0
     },
