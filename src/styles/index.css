@@ -611,7 +611,7 @@ html, body {
 /* Mobile & Tablet Specific Layout Modifications */
 @media (max-width: 768px) {
   .modal-content {
-    max-height: 95vh;
+    max-height: min(90dvh, 760px);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     margin-top: auto;
@@ -633,19 +633,9 @@ html, body {
     display: none !important;
   }
 
-  /* Main content padding adjustment for mobile */
-  main {
-    padding: 16px 16px !important;
-  }
-
   /* Card spacing for mobile */
   .card-3d {
     padding: 16px !important;
-  }
-
-  /* Grid adjustments for mobile */
-  [style*="gridTemplateColumns"] {
-    grid-template-columns: 1fr !important;
   }
 
   /* Prevent horizontal scroll on mobile */
@@ -719,15 +709,10 @@ html, body {
   }
 }
 
-/* Prevent horizontal overflow globally */
+/* Prevent horizontal overflow without constraining positioned overlays or controls. */
 body {
   overflow-x: hidden;
-  max-width: 100vw;
-}
-
-* {
   max-width: 100%;
-  box-sizing: border-box;
 }
 
 /* Ensure tables don't cause overflow */
@@ -820,20 +805,21 @@ body {
     display: block !important;
   }
 
-  /* Prevent keyboard overlap on mobile */
+  /* Keep one scroll owner for long forms; the body scrolls inside the modal. */
   .modal-content {
-    max-height: 80vh;
-    overflow-y: auto;
+    max-height: min(90dvh, 760px);
+    min-height: 0;
   }
 
-  /* Ensure touch targets are properly spaced */
-  [style*="display: flex"][style*="gap:"] {
-    flex-wrap: wrap;
+  .modal-body {
+    min-height: 0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Prevent content from being hidden behind keyboard */
-  main {
-    padding-bottom: 100px; /* Space for keyboard */
+  /* Prevent content from being hidden behind the shell navigation. */
+  .app-main {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -857,6 +843,132 @@ body {
 }
 
 /* PRINT ENGINE CSS (Thermal POS 80mm & A4 Invoices) */
+/* Application shell and screen lifecycle */
+.app-shell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+}
+
+.app-main {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 24px 20px 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.screen-container {
+  width: 100%;
+  min-width: 0;
+  animation: screenEnter 180ms ease-out;
+}
+
+@keyframes screenEnter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.app-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-glass);
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    min-height: 100dvh;
+  }
+
+  .app-shell > header {
+    padding: calc(8px + env(safe-area-inset-top, 0px)) 12px 8px !important;
+    gap: 8px;
+  }
+
+  .app-main {
+    width: 100%;
+    padding: 16px 16px calc(88px + env(safe-area-inset-bottom, 0px));
+    overflow: visible;
+  }
+
+  .screen-container {
+    min-height: 0;
+  }
+
+  .app-footer {
+    display: none;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 80;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    padding: 8px 6px calc(8px + env(safe-area-inset-bottom, 0px));
+    background: var(--bg-surface-elevated);
+    border-top: 1px solid var(--border-medium);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .mobile-bottom-nav__item {
+    min-width: 0;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 2px;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-muted);
+    font: 600 0.68rem/1.1 var(--font-sans);
+    white-space: nowrap;
+  }
+
+  .mobile-bottom-nav__item.is-active {
+    color: var(--primary-400);
+    background: rgba(16, 185, 129, 0.12);
+  }
+
+  .app-shell aside {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .modal-overlay {
+    min-height: 100dvh;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+
+  .modal-content {
+    width: min(100%, 720px);
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+}
+
 @media print {
   body {
     background: #ffffff !important;
@@ -923,5 +1035,84 @@ body {
   .printable-receipt th, .printable-receipt td {
     padding: 4px 0 !important;
     border-bottom: 1px dashed #444444 !important;
+  }
+}
+
+/* Billing/POS responsive layout */
+.billing-screen,
+.billing-screen > * {
+  min-width: 0;
+}
+
+.billing-product-grid {
+  min-height: 0;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.billing-cart-panel {
+  min-width: 0;
+}
+
+.billing-cart-list {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .billing-screen {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .billing-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-right: 0 !important;
+  }
+
+  .billing-cart-panel {
+    min-height: auto !important;
+    padding: 16px !important;
+  }
+
+  .billing-cart-list {
+    max-height: 36vh !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .billing-product-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-navbar__brand {
+    min-width: 0;
+    flex: 1 1 auto;
+    gap: 8px !important;
+  }
+
+  .app-navbar__brand > div:last-child {
+    min-width: 0;
+  }
+
+  .app-navbar__brand h1,
+  .app-navbar__brand p {
+    max-width: 38vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .app-navbar__actions {
+    flex: 0 0 auto;
+    gap: 4px !important;
+  }
+
+  .app-navbar__actions .quick-action {
+    display: none;
   }
 }

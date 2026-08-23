@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, seedInitialDataIfEmpty } from './db/database';
 import { getExpiryStatus } from './utils/formatters';
@@ -8,6 +8,7 @@ import { ToastContainer, type Toast } from './components/ui/Toast';
 // Components
 import { Navbar } from './components/layout/Navbar';
 import { Sidebar } from './components/layout/Sidebar';
+import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { AgriculturalCanvas } from './components/layout/AgriculturalCanvas';
 import { LoginView } from './components/auth/LoginView';
 
@@ -27,8 +28,32 @@ import { StaffLedgerView } from './components/staff/StaffLedgerView';
 import { ReportsView } from './components/reports/ReportsView';
 import { SettingsView } from './components/settings/SettingsView';
 
+const ROOT_TAB = 'dashboard';
+const ADMIN_ONLY_TABS = new Set(['purchases', 'suppliers', 'staff', 'staff-ledger', 'reports', 'settings']);
+const VALID_TABS = new Set([
+  ROOT_TAB,
+  'billing',
+  'products',
+  'low-stock',
+  'expiry',
+  'stock-history',
+  'sales-history',
+  'purchases',
+  'customers',
+  'suppliers',
+  'staff',
+  'staff-ledger',
+  'reports',
+  'settings',
+]);
+
+const getTabFromLocation = () => {
+  const tab = new URLSearchParams(window.location.search).get('screen');
+  return tab && VALID_TABS.has(tab) ? tab : ROOT_TAB;
+};
+
 export const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>('dashboard');
+  const [activeTab, setActiveTab] = useState<string>(getTabFromLocation);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [toasts, setToasts] = useState<Toast[]>([]);
@@ -36,28 +61,64 @@ export const App: React.FC = () => {
   const [currentUserRole, setCurrentUserRole] = useState<'ADMIN' | 'STAFF'>('ADMIN');
   const [currentUserName, setCurrentUserName] = useState<string>('');
 
-  // Toast management
   const removeToast = (id: string) => {
     setToasts(prev => prev.filter(t => t.id !== id));
   };
 
-  // Seed sample data on first launch
   useEffect(() => {
     seedInitialDataIfEmpty();
   }, []);
 
-  // Update theme attribute on root
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // Live queries for header counters & settings
+  useEffect(() => {
+    const handlePopState = () => {
+      setActiveTab(getTabFromLocation());
+      setIsSidebarOpen(false);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateTo = useCallback((tab: string) => {
+    if (!VALID_TABS.has(tab)) return;
+    if (ADMIN_ONLY_TABS.has(tab) && currentUserRole !== 'ADMIN') {
+      setActiveTab(ROOT_TAB);
+      return;
+    }
+
+    setIsSidebarOpen(false);
+    if (activeTab === tab) return;
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('screen', tab);
+    window.history.pushState({ screen: tab }, '', url);
+    setActiveTab(tab);
+  }, [activeTab, currentUserRole]);
+
+  useEffect(() => {
+    window.history.replaceState({ screen: getTabFromLocation() }, '', window.location.href);
+  }, []);
+
+  useEffect(() => {
+    document.title = activeTab === ROOT_TAB ? 'Agro Manager' : `${activeTab.replace('-', ' ')} • Agro Manager`;
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isSidebarOpen) setIsSidebarOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isLoggedIn, isSidebarOpen]);
+
   const settingsList = useLiveQuery(() => db.settings.toArray(), []) || [];
   const products = useLiveQuery(() => db.products.toArray(), []) || [];
-
   const settings = settingsList[0];
 
-  // Badges calculations
   const lowStockCount = products.filter(p => p.stockQty <= p.minStockAlert).length;
   const expiryCount = products.filter(p => {
     const status = getExpiryStatus(p.expiryDate);
@@ -70,111 +131,100 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleBack = () => {
+    if (activeTab !== ROOT_TAB) window.history.back();
+  };
+
   const handleLogin = (role: 'ADMIN' | 'STAFF', staffName?: string) => {
     setCurrentUserRole(role);
     setCurrentUserName(staffName || (role === 'ADMIN' ? 'Administrator' : 'Staff'));
     setIsLoggedIn(true);
+    navigateTo(ROOT_TAB);
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setCurrentUserRole('ADMIN');
     setCurrentUserName('');
-    setActiveTab('dashboard');
+    setIsSidebarOpen(false);
+    setActiveTab(ROOT_TAB);
+    const url = new URL(window.location.href);
+    url.searchParams.delete('screen');
+    window.history.replaceState({ screen: ROOT_TAB }, '', url);
   };
 
-  // Show login screen if not logged in
   if (!isLoggedIn) {
     return <LoginView onLogin={handleLogin} settings={settings} />;
   }
 
-  // Effective settings object with activeUserRole aligned with logged-in role
   const effectiveSettings: ShopSettings | undefined = settings ? {
     ...settings,
     activeUserRole: currentUserRole,
-    activeUserName: currentUserName || settings.activeUserName
+    activeUserName: currentUserName || settings.activeUserName,
   } : undefined;
 
   const isAdmin = currentUserRole === 'ADMIN';
+  const activeScreen = (() => {
+    switch (activeTab) {
+      case 'dashboard': return <DashboardView setActiveTab={navigateTo} />;
+      case 'billing': return <POSBillingView settings={effectiveSettings} />;
+      case 'products': return <ProductCatalog />;
+      case 'low-stock': return <LowStockView setActiveTab={navigateTo} />;
+      case 'expiry': return <ExpiryView />;
+      case 'stock-history': return <StockHistoryView />;
+      case 'sales-history': return <SalesHistoryView settings={effectiveSettings} />;
+      case 'purchases': return isAdmin ? <PurchaseManagementView /> : <DashboardView setActiveTab={navigateTo} />;
+      case 'customers': return <CustomerManagementView settings={effectiveSettings} />;
+      case 'suppliers': return isAdmin ? <SupplierManagementView settings={effectiveSettings} /> : <DashboardView setActiveTab={navigateTo} />;
+      case 'staff': return isAdmin ? <StaffManagementView settings={effectiveSettings} /> : <DashboardView setActiveTab={navigateTo} />;
+      case 'staff-ledger': return isAdmin ? <StaffLedgerView settings={effectiveSettings} /> : <DashboardView setActiveTab={navigateTo} />;
+      case 'reports': return isAdmin ? <ReportsView /> : <DashboardView setActiveTab={navigateTo} />;
+      case 'settings': return isAdmin ? <SettingsView /> : <DashboardView setActiveTab={navigateTo} />;
+      default: return <DashboardView setActiveTab={navigateTo} />;
+    }
+  })();
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-      {/* Dynamic 3D Agricultural Background Canvas */}
+    <div className="app-shell">
       <AgriculturalCanvas enabled={settings?.enable3DEffects !== false} />
-
-      {/* Top Sticky Navbar */}
       <Navbar
         settings={effectiveSettings}
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={navigateTo}
         lowStockCount={lowStockCount}
         expiryCount={expiryCount}
         theme={theme}
         setTheme={setTheme}
-        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+        onToggleSidebar={() => setIsSidebarOpen(open => !open)}
+        onBack={handleBack}
         onRoleChange={handleRoleChange}
         onLogout={handleLogout}
         currentUserRole={currentUserRole}
         currentUserName={currentUserName}
       />
-
-      {/* Sidebar Navigation */}
       <Sidebar
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={navigateTo}
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
         lowStockCount={lowStockCount}
         expiryCount={expiryCount}
         userRole={currentUserRole}
       />
-
-      {/* Main View Area */}
-      <main 
-        style={{
-          flex: 1,
-          padding: '24px 20px',
-          maxWidth: '1440px',
-          width: '100%',
-          margin: '0 auto',
-          position: 'relative',
-          zIndex: 1
-        }}
-      >
-        {activeTab === 'dashboard' && <DashboardView setActiveTab={setActiveTab} />}
-        {activeTab === 'billing' && <POSBillingView settings={effectiveSettings} />}
-        {activeTab === 'products' && <ProductCatalog />}
-        {activeTab === 'low-stock' && <LowStockView setActiveTab={setActiveTab} />}
-        {activeTab === 'expiry' && <ExpiryView />}
-        {activeTab === 'stock-history' && <StockHistoryView />}
-        {activeTab === 'sales-history' && <SalesHistoryView settings={effectiveSettings} />}
-        {activeTab === 'purchases' && (isAdmin ? <PurchaseManagementView /> : <DashboardView setActiveTab={setActiveTab} />)}
-        {activeTab === 'customers' && <CustomerManagementView settings={effectiveSettings} />}
-        {activeTab === 'suppliers' && (isAdmin ? <SupplierManagementView settings={effectiveSettings} /> : <DashboardView setActiveTab={setActiveTab} />)}
-        {activeTab === 'staff' && (isAdmin ? <StaffManagementView settings={effectiveSettings} /> : <DashboardView setActiveTab={setActiveTab} />)}
-        {activeTab === 'staff-ledger' && (isAdmin ? <StaffLedgerView settings={effectiveSettings} /> : <DashboardView setActiveTab={setActiveTab} />)}
-        {activeTab === 'reports' && (isAdmin ? <ReportsView /> : <DashboardView setActiveTab={setActiveTab} />)}
-        {activeTab === 'settings' && (isAdmin ? <SettingsView /> : <DashboardView setActiveTab={setActiveTab} />)}
+      <main className="app-main" aria-live="polite">
+        <div className="screen-container" key={activeTab}>
+          {activeScreen}
+        </div>
       </main>
-
-      {/* Footer */}
-      <footer 
-        style={{
-          textAlign: 'center',
-          padding: '16px',
-          fontSize: '0.8rem',
-          color: 'var(--text-muted)',
-          borderTop: '1px solid var(--border-light)',
-          background: 'var(--bg-glass)',
-          position: 'relative',
-          zIndex: 1
-        }}
-        className="no-print"
-      >
+      <footer className="app-footer no-print">
         Kisan Dost Agro Pesticide Management • Designed for Agricultural Retail Shops in Pakistan • Offline First Storage
       </footer>
-
-      {/* Toast Notifications */}
+      <MobileBottomNav
+        activeTab={activeTab}
+        setActiveTab={navigateTo}
+        onOpenMenu={() => setIsSidebarOpen(true)}
+        userRole={currentUserRole}
+      />
       <ToastContainer toasts={toasts} onRemove={removeToast} />
     </div>
   );

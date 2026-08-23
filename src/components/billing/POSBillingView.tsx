@@ -206,7 +206,7 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
     // Fire Confetti Animation!
     try {
       confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
-    } catch (e) {}
+    } catch {}
 
     setCompletedSale(saleRecord);
     setIsInvoiceModalOpen(true);
@@ -214,7 +214,7 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '20px' }}>
+    <div className="billing-screen" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.15fr) minmax(320px, 0.85fr)', gap: '20px', alignItems: 'start' }}>
       {/* LEFT PANE: Product Selection Catalog */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {/* Search & Category Filter */}
@@ -248,11 +248,12 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
 
         {/* Product Grid */}
         <div 
+          className="billing-product-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))',
             gap: '12px',
-            maxHeight: 'calc(100vh - 240px)',
+            maxHeight: 'calc(100dvh - 240px)',
             overflowY: 'auto',
             paddingRight: '4px'
           }}
@@ -308,13 +309,13 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
 
       {/* RIGHT PANE: Cart & Checkout Summary */}
       <div 
-        className="card-3d" 
+        className="card-3d billing-cart-panel"
         style={{
           padding: '20px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          minHeight: 'calc(100vh - 160px)'
+          minHeight: 'calc(100dvh - 160px)'
         }}
       >
         <div>
@@ -339,7 +340,7 @@ export const POSBillingView: React.FC<Props> = ({ settings }) => {
               <p style={{ fontSize: '0.8rem' }}>Tap or click any product from the left catalog to add.</p>
             </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', maxHeight: '240px', overflowY: 'auto', marginBottom: '16px' }}>
+            <div className="billing-cart-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px', maxHeight: '240px', overflowY: 'auto', marginBottom: '16px' }}>
               {cart.map(item => (
                 <CartItemRow 
                   key={item.product.id}

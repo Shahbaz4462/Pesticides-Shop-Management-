@@ -7,7 +7,8 @@ import {
   Moon, 
   Menu, 
   LogOut,
-  User
+  User,
+  ArrowLeft
 } from 'lucide-react';
 import type { UserRole, ShopSettings } from '../../types';
 
@@ -20,6 +21,7 @@ interface Props {
   theme: 'dark' | 'light';
   setTheme: (t: 'dark' | 'light') => void;
   onToggleSidebar: () => void;
+  onBack: () => void;
   onRoleChange: (role: UserRole) => void;
   onLogout: () => void;
   currentUserRole: 'ADMIN' | 'STAFF';
@@ -28,11 +30,13 @@ interface Props {
 
 export const Navbar: React.FC<Props> = ({
   settings,
+  activeTab,
   setActiveTab,
   lowStockCount,
   theme,
   setTheme,
   onToggleSidebar,
+  onBack,
   onLogout,
   currentUserRole,
   currentUserName
@@ -56,11 +60,22 @@ export const Navbar: React.FC<Props> = ({
       }}
     >
       {/* Left: Mobile Menu & Shop Title */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+      <div className="app-navbar__brand" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        {activeTab !== 'dashboard' && (
+          <button
+            className="btn btn-secondary btn-icon"
+            onClick={onBack}
+            title="Back to previous screen"
+            aria-label="Back to previous screen"
+          >
+            <ArrowLeft size={20} />
+          </button>
+        )}
         <button 
           className="btn btn-secondary btn-icon"
           onClick={onToggleSidebar}
           title="Toggle Navigation Menu"
+          aria-label="Open navigation menu"
           style={{ display: 'flex' }}
         >
           <Menu size={20} />
@@ -98,11 +113,11 @@ export const Navbar: React.FC<Props> = ({
       </div>
 
       {/* Right Controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div className="app-navbar__actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         {/* Low Stock Warning Counter */}
         {lowStockCount > 0 && (
           <button 
-            className="btn btn-warning"
+            className="btn btn-warning quick-action"
             onClick={() => setActiveTab('low-stock')}
             style={{ padding: '6px 12px', fontSize: '0.8rem' }}
           >
@@ -114,7 +129,7 @@ export const Navbar: React.FC<Props> = ({
 
         {/* Quick Billing Action */}
         <button 
-          className="btn btn-primary"
+          className="btn btn-primary quick-action"
           onClick={() => setActiveTab('billing')}
           style={{ padding: '8px 16px' }}
         >
